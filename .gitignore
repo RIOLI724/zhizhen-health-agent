@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+backend/.venv/
+
+# Node
+frontend/node_modules/
+frontend/.next/
+frontend/.turbo/
+*.tsbuildinfo
+
+# Logs
+*.log
+
+# Data / vector index
+backend/data/vector/
+backend/data/models/
+
+# Env
+.env
+.env.local
+
+# IDE（仅保留共享的运行配置）
+.idea/*
+!.idea/runConfigurations/
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,163 @@
+[
+  {
+    "name": "头晕伴神经症状",
+    "symptom": "dizziness",
+    "answers": {"nature": "vertigo", "associated": ["neuro"]},
+    "expected_level": "L1",
+    "expected_department": "急诊科"
+  },
+  {
+    "name": "头晕伴胸痛心悸",
+    "symptom": "dizziness",
+    "answers": {"nature": "vertigo", "associated": ["chest"]},
+    "expected_level": "L1",
+    "expected_department": "急诊科"
+  },
+  {
+    "name": "普通旋转性眩晕",
+    "symptom": "dizziness",
+    "answers": {"nature": "vertigo", "associated": ["none"]},
+    "expected_level": "L3",
+    "expected_department": "神经内科"
+  },
+  {
+    "name": "昏沉感无红旗",
+    "symptom": "dizziness",
+    "answers": {"nature": "lightheaded", "associated": ["none"]},
+    "expected_level": "L3",
+    "expected_department": "神经内科"
+  },
+  {
+    "name": "儿童高热",
+    "symptom": "fever",
+    "answers": {"age": "child", "temp": "gt39", "duration": "1to3d", "associated": ["none"]},
+    "expected_level": "L2",
+    "expected_department": "儿科"
+  },
+  {
+    "name": "发热伴意识改变",
+    "symptom": "fever",
+    "answers": {"age": "adult", "temp": "38to39", "duration": "1to3d", "associated": ["consciousness"]},
+    "expected_level": "L1",
+    "expected_department": "急诊科"
+  },
+  {
+    "name": "发热伴呕吐脱水",
+    "symptom": "fever",
+    "answers": {"age": "adult", "temp": "38to39", "duration": "1to3d", "associated": ["vomiting"]},
+    "expected_level": "L2",
+    "expected_department": "急诊科"
+  },
+  {
+    "name": "孕产妇发热",
+    "symptom": "fever",
+    "answers": {"age": "pregnant", "temp": "38to39", "duration": "1to3d", "associated": ["none"]},
+    "expected_level": "L2",
+    "expected_department": "产科"
+  },
+  {
+    "name": "成人普通发热",
+    "symptom": "fever",
+    "answers": {"age": "adult", "temp": "38to39", "duration": "1to3d", "associated": ["none"]},
+    "expected_level": "L3",
+    "expected_department": "发热门诊"
+  },
+  {
+    "name": "胸痛超过15分钟",
+    "symptom": "chest_pain",
+    "answers": {"duration": "gt15m", "associated": []},
+    "expected_level": "L1",
+    "expected_department": "急诊科"
+  },
+  {
+    "name": "压榨性胸痛",
+    "symptom": "chest_pain",
+    "answers": {"quality": "pressure", "duration": "lt5m", "associated": ["none"]},
+    "expected_level": "L1",
+    "expected_department": "急诊科"
+  },
+  {
+    "name": "短时胸痛伴冷汗",
+    "symptom": "chest_pain",
+    "answers": {"duration": "lt5m", "associated": ["sweat"]},
+    "expected_level": "L1",
+    "expected_department": "急诊科"
+  },
+  {
+    "name": "胸痛伴心悸",
+    "symptom": "chest_pain",
+    "answers": {"duration": "lt5m", "associated": ["palpitation"]},
+    "expected_level": "L2",
+    "expected_department": "心血管内科"
+  },
+  {
+    "name": "轻度腹痛",
+    "symptom": "abdominal_pain",
+    "answers": {"severity": "mild", "associated": ["none"]},
+    "expected_level": "L3",
+    "expected_department": "消化内科"
+  },
+  {
+    "name": "腹痛伴呕血",
+    "symptom": "abdominal_pain",
+    "answers": {"severity": "mild", "associated": ["hematemesis"]},
+    "expected_level": "L1",
+    "expected_department": "急诊科"
+  },
+  {
+    "name": "剧烈腹痛",
+    "symptom": "abdominal_pain",
+    "answers": {"severity": "severe", "associated": ["none"]},
+    "expected_level": "L2",
+    "expected_department": "急诊科"
+  },
+  {
+    "name": "腹痛伴血便",
+    "symptom": "abdominal_pain",
+    "answers": {"severity": "mild", "associated": ["bloodstool"]},
+    "expected_level": "L2",
+    "expected_department": "消化内科"
+  },
+  {
+    "name": "炸裂样头痛",
+    "symptom": "headache",
+    "answers": {"onset": "thunderclap", "associated": ["none"]},
+    "expected_level": "L1",
+    "expected_department": "急诊科"
+  },
+  {
+    "name": "头痛伴发热颈强直",
+    "symptom": "headache",
+    "answers": {"onset": "gradual", "associated": ["fever_neck"]},
+    "expected_level": "L1",
+    "expected_department": "急诊科"
+  },
+  {
+    "name": "头痛伴呕吐",
+    "symptom": "headache",
+    "answers": {"onset": "gradual", "associated": ["vomit"]},
+    "expected_level": "L2",
+    "expected_department": "神经内科"
+  },
+  {
+    "name": "反复头痛无红旗",
+    "symptom": "headache",
+    "answers": {"onset": "recurrent", "associated": ["none"]},
+    "expected_level": "L3",
+    "expected_department": "神经内科"
+  },
+  {
+    "name": "血压危险数值",
+    "symptom": "vitals",
+    "answers": {"vital": ["bp_high"]},
+    "expected_level": "L1",
+    "expected_department": "急诊科"
+  },
+  {
+    "name": "突发吞咽困难",
+    "symptom": "general_redflag",
+    "answers": {"state": ["dysphagia"]},
+    "expected_level": "L1",
+    "expected_department": "急诊科"
+  }
+]

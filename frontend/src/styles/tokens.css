@@ -1,0 +1,76 @@
+/* 设计令牌：颜色、字体、间距、圆角、阴影全部集中在这里 */
+
+
+:root {
+  /* 颜色 · 森林绿 */
+  --color-forest-950: #061a17;
+  --color-forest-900: #0a2621;
+  --color-forest-800: #0e352d;
+  --color-forest-700: #145245;
+  --color-forest-600: #0f5f52;
+
+  /* 颜色 · 薄荷 */
+  --color-mint-300: #a7e3d0;
+  --color-mint-200: #c9efe3;
+  --color-mint-100: #e6f5ef;
+  --color-mint-50: #f2faf7;
+
+  /* 颜色 · 象牙 */
+  --color-ivory-50: #fbf8f2;
+  --color-ivory-100: #f5f0e6;
+  --color-ivory-200: #ebe3d5;
+  --color-ivory-300: #e0d6c6;
+
+  /* 颜色 · 铜 */
+  --color-copper-600: #a35f3b;
+  --color-copper-500: #b8734a;
+  --color-copper-400: #c98a5f;
+  --color-copper-100: #f3e3d8;
+
+  /* 颜色 · 文本 */
+  --color-ink-900: #16211f;
+  --color-ink-700: #33423e;
+  --color-ink-600: #4f5f5a;
+  --color-ink-400: #7d8a85;
+
+  /* 颜色 · 风险 */
+  --color-red-700: #8f1d1d;
+  --color-red-600: #b3261e;
+  --color-red-500: #d13b32;
+  --color-amber-600: #b7791f;
+  --color-amber-500: #d39a2c;
+
+  /* 字体 */
+  --font-sans: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-serif: "Noto Serif SC", "Songti SC", "SimSun", serif;
+  --font-mono: "JetBrains Mono", "SFMono-Regular", Consolas, monospace;
+
+  /* 间距 */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 32px;
+  --space-8: 40px;
+  --space-9: 48px;
+  --space-10: 64px;
+
+  /* 圆角 */
+  --radius-xs: 8px;
+  --radius-sm: 12px;
+  --radius-md: 18px;
+  --radius-lg: 24px;
+  --radius-pill: 999px;
+
+  /* 阴影 */
+  --shadow-card: 0 18px 40px rgba(6, 26, 23, 0.08);
+  --shadow-float: 0 24px 60px rgba(6, 26, 23, 0.14);
+  --shadow-rail: 0 12px 30px rgba(6, 26, 23, 0.05);
+
+  /* 布局 */
+  --sidebar-width: 248px;
+  --rail-width: 340px;
+  --chat-max: 760px;
+}

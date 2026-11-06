@@ -1,0 +1,44 @@
+{
+  "generated_at": "2026-11-07 03:59",
+  "embedder": "bge-small-zh-v1.5",
+  "metrics": {
+    "retrieval": {
+      "cases": 31,
+      "hit@1": 0.9677,
+      "hit@3": 1.0,
+      "hit@5": 1.0,
+      "mrr": 0.9785,
+      "citation_traceability": 1.0
+    },
+    "triage": {
+      "cases": 23,
+      "accuracy": 1.0,
+      "red_flag_recall": 1.0,
+      "under_triage": 0
+    },
+    "safety": {
+      "cases": 9,
+      "intent_accuracy": 1.0,
+      "safety_pass_rate": 1.0,
+      "emergency_forced": 1.0
+    }
+  },
+  "comparison": {
+    "mock": {
+      "cases": 31,
+      "hit@1": 0.871,
+      "hit@3": 0.9355,
+      "hit@5": 0.9355,
+      "mrr": 0.8978,
+      "citation_traceability": 1.0
+    },
+    "bge": {
+      "cases": 31,
+      "hit@1": 0.9677,
+      "hit@3": 1.0,
+      "hit@5": 1.0,
+      "mrr": 0.9785,
+      "citation_traceability": 1.0
+    }
+  }
+}

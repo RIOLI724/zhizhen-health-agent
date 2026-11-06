@@ -1,0 +1,524 @@
+{
+  "symptoms": {
+    "dizziness": {
+      "name": "头晕",
+      "questions": [
+        {
+          "id": "nature",
+          "title": "头晕是什么感觉？",
+          "type": "single",
+          "options": [
+            { "value": "vertigo", "label": "天旋地转" },
+            { "value": "lightheaded", "label": "昏沉 / 眼前发黑" },
+            { "value": "unclear", "label": "说不清" }
+          ]
+        },
+        {
+          "id": "associated",
+          "title": "有没有以下伴随情况？",
+          "type": "multi",
+          "options": [
+            { "value": "tinnitus", "label": "耳鸣 / 听力下降" },
+            { "value": "neuro", "label": "手脚麻木 / 说话不清" },
+            { "value": "chest", "label": "胸痛 / 心悸" },
+            { "value": "none", "label": "以上都没有" }
+          ]
+        }
+      ],
+      "red_flags": [
+        {
+          "id": "stroke",
+          "level": "L1",
+          "when": { "associated": ["neuro"] },
+          "reason": "手脚麻木或说话不清，需警惕卒中",
+          "department": "急诊科",
+          "timeframe": "立即拨打 120 或前往急诊",
+          "evidence": "《中国急性缺血性脑卒中诊治指南》（演示摘要）"
+        },
+        {
+          "id": "cardiac",
+          "level": "L1",
+          "when": { "associated": ["chest"] },
+          "reason": "头晕伴胸痛或心悸，需排除心源性病因",
+          "department": "急诊科",
+          "timeframe": "立即拨打 120 或前往急诊",
+          "evidence": "《急诊预检分诊公开共识》（演示摘要）"
+        }
+      ],
+      "base": {
+        "level": "L3",
+        "department": "神经内科 / 耳鼻喉科",
+        "timeframe": "72 小时内门诊",
+        "reason": "没有命中需要立即急救的警示信号，建议近期门诊评估。",
+        "evidence": "《眩晕诊治多学科专家共识》（演示摘要）"
+      }
+    },
+    "fever": {
+      "name": "发热",
+      "questions": [
+        {
+          "id": "age",
+          "title": "患者属于哪类人群？",
+          "type": "single",
+          "options": [
+            { "value": "adult", "label": "成人" },
+            { "value": "child", "label": "儿童" },
+            { "value": "elderly", "label": "65 岁以上" },
+            { "value": "pregnant", "label": "孕产妇" }
+          ]
+        },
+        {
+          "id": "temp",
+          "title": "最高体温大概是多少？",
+          "type": "single",
+          "options": [
+            { "value": "lt38", "label": "38℃ 以下" },
+            { "value": "38to39", "label": "38–39℃" },
+            { "value": "gt39", "label": "39℃ 以上" },
+            { "value": "unknown", "label": "没量过" }
+          ]
+        },
+        {
+          "id": "duration",
+          "title": "发热持续多久了？",
+          "type": "single",
+          "options": [
+            { "value": "lt24h", "label": "不到 1 天" },
+            { "value": "1to3d", "label": "1–3 天" },
+            { "value": "4to7d", "label": "4–7 天" },
+            { "value": "gt7d", "label": "超过 1 周" }
+          ]
+        },
+        {
+          "id": "associated",
+          "title": "有没有以下伴随情况？",
+          "type": "multi",
+          "options": [
+            { "value": "consciousness", "label": "意识模糊、嗜睡或抽搐" },
+            { "value": "neck", "label": "脖子发硬、剧烈头痛" },
+            { "value": "purpura", "label": "皮肤紫红色出血点" },
+            { "value": "breathing", "label": "呼吸困难或口唇发紫" },
+            { "value": "vomiting", "label": "反复呕吐、喝不进水" },
+            { "value": "none", "label": "以上都没有" }
+          ]
+        }
+      ],
+      "red_flags": [
+        {
+          "id": "neuro",
+          "level": "L1",
+          "when": { "associated": ["consciousness", "neck"] },
+          "reason": "发热伴意识改变、抽搐或颈项强直，需立即急诊",
+          "department": "急诊科",
+          "timeframe": "立即拨打 120 或前往急诊",
+          "evidence": "《急诊预检分诊公开共识》（演示摘要）"
+        },
+        {
+          "id": "purpura",
+          "level": "L1",
+          "when": { "associated": ["purpura"] },
+          "reason": "发热伴紫红色出血点，需警惕严重感染",
+          "department": "急诊科",
+          "timeframe": "立即拨打 120 或前往急诊",
+          "evidence": "《急诊预检分诊公开共识》（演示摘要）"
+        },
+        {
+          "id": "breathing",
+          "level": "L1",
+          "when": { "associated": ["breathing"] },
+          "reason": "发热伴呼吸困难或口唇发紫，需立即处理",
+          "department": "急诊科",
+          "timeframe": "立即拨打 120 或前往急诊",
+          "evidence": "《急诊预检分诊公开共识》（演示摘要）"
+        },
+        {
+          "id": "vomiting",
+          "level": "L2",
+          "when": { "associated": ["vomiting"] },
+          "reason": "反复呕吐、无法进水，存在脱水风险",
+          "department": "急诊科 / 发热门诊",
+          "timeframe": "24 小时内就医",
+          "evidence": "《常见症状基层诊疗指南》（演示摘要）"
+        },
+        {
+          "id": "infant",
+          "level": "L2",
+          "when": { "age": ["child"], "temp": ["gt39"] },
+          "reason": "儿童高热，需要尽快评估",
+          "department": "儿科",
+          "timeframe": "24 小时内就医",
+          "evidence": "《常见症状基层诊疗指南》（演示摘要）"
+        },
+        {
+          "id": "pregnant",
+          "level": "L2",
+          "when": { "age": ["pregnant"] },
+          "reason": "孕产妇发热需同时评估母胎安全",
+          "department": "产科 / 发热门诊",
+          "timeframe": "24 小时内就医",
+          "evidence": "《常见症状基层诊疗指南》（演示摘要）"
+        }
+      ],
+      "base": {
+        "level": "L3",
+        "department": "发热门诊 / 感染科",
+        "timeframe": "72 小时内门诊",
+        "reason": "根据体温和持续时间，建议近期门诊评估感染灶。",
+        "evidence": "《常见症状基层诊疗指南》（演示摘要）"
+      }
+    },
+    "chest_pain": {
+      "name": "胸痛",
+      "questions": [
+        {
+          "id": "duration",
+          "title": "胸痛持续多久了？",
+          "type": "single",
+          "options": [
+            { "value": "lt5m", "label": "不到 5 分钟" },
+            { "value": "5to15m", "label": "5–15 分钟" },
+            { "value": "gt15m", "label": "超过 15 分钟" },
+            { "value": "recurrent", "label": "反复发作" }
+          ]
+        },
+        {
+          "id": "quality",
+          "title": "胸痛是什么性质？",
+          "type": "single",
+          "options": [
+            { "value": "pressure", "label": "压榨 / 紧缩感" },
+            { "value": "sharp", "label": "针刺样" },
+            { "value": "burning", "label": "烧灼样" }
+          ]
+        },
+        {
+          "id": "associated",
+          "title": "有没有以下伴随情况？",
+          "type": "multi",
+          "options": [
+            { "value": "sweat", "label": "出冷汗" },
+            { "value": "radiate", "label": "放射到左臂、肩背或下颌" },
+            { "value": "dyspnea", "label": "呼吸困难" },
+            { "value": "syncope", "label": "晕厥或眼前发黑" },
+            { "value": "palpitation", "label": "明显心慌" },
+            { "value": "none", "label": "以上都没有" }
+          ]
+        }
+      ],
+      "red_flags": [
+        {
+          "id": "acs_quality",
+          "level": "L1",
+          "when": { "quality": ["pressure"] },
+          "reason": "胸痛呈压榨性或紧缩感，需按急性冠脉事件处理",
+          "department": "急诊科",
+          "timeframe": "立即拨打 120 或前往急诊",
+          "evidence": "《急诊预检分诊公开共识》（演示摘要）"
+        },
+        {
+          "id": "acs_duration",
+          "level": "L1",
+          "when": { "duration": ["gt15m"] },
+          "reason": "胸痛持续不缓解或超过 15 分钟，需按急性冠脉事件处理",
+          "department": "急诊科",
+          "timeframe": "立即拨打 120 或前往急诊",
+          "evidence": "《急诊预检分诊公开共识》（演示摘要）"
+        },
+        {
+          "id": "acs_symptoms",
+          "level": "L1",
+          "when": {
+            "associated": ["sweat", "radiate", "dyspnea", "syncope"]
+          },
+          "reason": "胸痛伴冷汗、放射痛、呼吸困难或晕厥，需立即急救",
+          "department": "急诊科",
+          "timeframe": "立即拨打 120 或前往急诊",
+          "evidence": "《急诊预检分诊公开共识》（演示摘要）"
+        },
+        {
+          "id": "palpitation",
+          "level": "L2",
+          "when": { "associated": ["palpitation"] },
+          "reason": "胸痛伴明显心悸，需尽快心内科评估",
+          "department": "心血管内科",
+          "timeframe": "24 小时内就医",
+          "evidence": "《常见症状基层诊疗指南》（演示摘要）"
+        }
+      ],
+      "base": {
+        "level": "L2",
+        "department": "心血管内科",
+        "timeframe": "24 小时内就医",
+        "reason": "胸痛需优先排除心脏原因，建议尽快心内科评估。",
+        "evidence": "《常见症状基层诊疗指南》（演示摘要）"
+      }
+    },
+    "abdominal_pain": {
+      "name": "腹痛",
+      "questions": [
+        {
+          "id": "severity",
+          "title": "疼痛程度如何？",
+          "type": "single",
+          "options": [
+            { "value": "mild", "label": "轻微" },
+            { "value": "moderate", "label": "明显但能忍" },
+            { "value": "severe", "label": "剧烈难忍" }
+          ]
+        },
+        {
+          "id": "associated",
+          "title": "有没有以下伴随情况？",
+          "type": "multi",
+          "options": [
+            { "value": "hematemesis", "label": "呕血或黑便" },
+            { "value": "rigid", "label": "全腹发硬、按压剧痛" },
+            { "value": "syncope", "label": "晕厥、冷汗、面色苍白" },
+            { "value": "pregnant_bleed", "label": "怀孕或停经伴下腹痛 / 出血" },
+            { "value": "bloodstool", "label": "血便" },
+            { "value": "fever", "label": "发热超过 38.5℃" },
+            { "value": "none", "label": "以上都没有" }
+          ]
+        }
+      ],
+      "red_flags": [
+        {
+          "id": "gi_bleed",
+          "level": "L1",
+          "when": { "associated": ["hematemesis"] },
+          "reason": "呕血或黑便提示消化道出血",
+          "department": "急诊科",
+          "timeframe": "立即拨打 120 或前往急诊",
+          "evidence": "《急诊预检分诊公开共识》（演示摘要）"
+        },
+        {
+          "id": "peritonitis",
+          "level": "L1",
+          "when": { "associated": ["rigid"] },
+          "reason": "全腹发硬、按压剧痛，提示急腹症",
+          "department": "急诊科",
+          "timeframe": "立即拨打 120 或前往急诊",
+          "evidence": "《急诊预检分诊公开共识》（演示摘要）"
+        },
+        {
+          "id": "shock",
+          "level": "L1",
+          "when": { "associated": ["syncope"] },
+          "reason": "腹痛伴晕厥、冷汗，需警惕休克",
+          "department": "急诊科",
+          "timeframe": "立即拨打 120 或前往急诊",
+          "evidence": "《急诊预检分诊公开共识》（演示摘要）"
+        },
+        {
+          "id": "ectopic",
+          "level": "L1",
+          "when": { "associated": ["pregnant_bleed"] },
+          "reason": "怀孕或停经伴下腹痛 / 出血，需排除宫外孕",
+          "department": "急诊科 / 产科",
+          "timeframe": "立即拨打 120 或前往急诊",
+          "evidence": "《急诊预检分诊公开共识》（演示摘要）"
+        },
+        {
+          "id": "bloodstool",
+          "level": "L2",
+          "when": { "associated": ["bloodstool"] },
+          "reason": "血便提示消化道出血，需尽快就医",
+          "department": "消化内科 / 急诊科",
+          "timeframe": "24 小时内就医",
+          "evidence": "《常见症状基层诊疗指南》（演示摘要）"
+        },
+        {
+          "id": "severe",
+          "level": "L2",
+          "when": { "severity": ["severe"] },
+          "reason": "剧烈难忍的腹痛需尽快排除急腹症",
+          "department": "急诊科 / 普外科",
+          "timeframe": "24 小时内就医",
+          "evidence": "《急诊预检分诊公开共识》（演示摘要）"
+        }
+      ],
+      "base": {
+        "level": "L3",
+        "department": "消化内科",
+        "timeframe": "72 小时内门诊",
+        "reason": "没有命中急诊警示信号，建议近期消化内科门诊评估。",
+        "evidence": "《常见症状基层诊疗指南》（演示摘要）"
+      }
+    },
+    "headache": {
+      "name": "头痛",
+      "questions": [
+        {
+          "id": "onset",
+          "title": "头痛是怎么开始的？",
+          "type": "single",
+          "options": [
+            { "value": "thunderclap", "label": "突然炸裂样，几秒到 1 分钟最痛" },
+            { "value": "gradual", "label": "逐渐加重" },
+            { "value": "recurrent", "label": "反复发作" }
+          ]
+        },
+        {
+          "id": "associated",
+          "title": "有没有以下伴随情况？",
+          "type": "multi",
+          "options": [
+            { "value": "fever_neck", "label": "发热伴脖子发硬" },
+            { "value": "neuro", "label": "肢体无力、说话不清、口角歪斜" },
+            { "value": "vision", "label": "视物模糊或成双" },
+            { "value": "trauma", "label": "头部外伤后出现" },
+            { "value": "vomit", "label": "恶心呕吐" },
+            { "value": "none", "label": "以上都没有" }
+          ]
+        }
+      ],
+      "red_flags": [
+        {
+          "id": "sah",
+          "level": "L1",
+          "when": { "onset": ["thunderclap"] },
+          "reason": "突发炸裂样头痛，需急诊排除蛛网膜下腔出血",
+          "department": "急诊科",
+          "timeframe": "立即拨打 120 或前往急诊",
+          "evidence": "《急诊预检分诊公开共识》（演示摘要）"
+        },
+        {
+          "id": "cns_infection",
+          "level": "L1",
+          "when": { "associated": ["fever_neck"] },
+          "reason": "头痛伴发热和颈项强直，需排除中枢感染",
+          "department": "急诊科",
+          "timeframe": "立即拨打 120 或前往急诊",
+          "evidence": "《急诊预检分诊公开共识》（演示摘要）"
+        },
+        {
+          "id": "neuro_deficit",
+          "level": "L1",
+          "when": { "associated": ["neuro", "vision", "trauma"] },
+          "reason": "头痛伴神经功能缺损或外伤，需立即急诊",
+          "department": "急诊科",
+          "timeframe": "立即拨打 120 或前往急诊",
+          "evidence": "《急诊预检分诊公开共识》（演示摘要）"
+        },
+        {
+          "id": "vomit",
+          "level": "L2",
+          "when": { "associated": ["vomit"] },
+          "reason": "头痛伴恶心呕吐，需尽快评估",
+          "department": "神经内科",
+          "timeframe": "24 小时内就医",
+          "evidence": "《常见症状基层诊疗指南》（演示摘要）"
+        }
+      ],
+      "base": {
+        "level": "L3",
+        "department": "神经内科",
+        "timeframe": "72 小时内门诊",
+        "reason": "没有命中急诊警示信号，建议神经内科门诊评估。",
+        "evidence": "《常见症状基层诊疗指南》（演示摘要）"
+      }
+    },
+    "vitals": {
+      "name": "危险数值",
+      "questions": [
+        {
+          "id": "vital",
+          "title": "哪个数值异常？",
+          "type": "single",
+          "options": [
+            { "value": "glucose_high", "label": "血糖 ≥16.7" },
+            { "value": "glucose_low", "label": "血糖 ≤3.9" },
+            { "value": "bp_high", "label": "血压 ≥180/120" },
+            { "value": "spo2_low", "label": "血氧 ≤93%" }
+          ]
+        }
+      ],
+      "red_flags": [
+        {
+          "id": "glucose_high",
+          "level": "L1",
+          "when": { "vital": ["glucose_high"] },
+          "reason": "血糖 ≥16.7 mmol/L，需警惕糖尿病急性并发症",
+          "department": "急诊科 / 内分泌科",
+          "timeframe": "立即就医",
+          "evidence": "《中国2型糖尿病防治指南》（演示摘要）"
+        },
+        {
+          "id": "glucose_low",
+          "level": "L1",
+          "when": { "vital": ["glucose_low"] },
+          "reason": "血糖 ≤3.9 mmol/L，存在低血糖风险",
+          "department": "急诊科",
+          "timeframe": "立即就医",
+          "evidence": "《中国2型糖尿病防治指南》（演示摘要）"
+        },
+        {
+          "id": "bp_high",
+          "level": "L1",
+          "when": { "vital": ["bp_high"] },
+          "reason": "血压 ≥180/120 mmHg，需警惕高血压急症",
+          "department": "急诊科 / 心内科",
+          "timeframe": "立即拨打 120 或前往急诊",
+          "evidence": "《中国高血压防治指南》（演示摘要）"
+        },
+        {
+          "id": "spo2_low",
+          "level": "L1",
+          "when": { "vital": ["spo2_low"] },
+          "reason": "血氧饱和度 ≤93%，提示缺氧",
+          "department": "急诊科",
+          "timeframe": "立即就医",
+          "evidence": "《急诊预检分诊公开共识》（演示摘要）"
+        }
+      ],
+      "base": {
+        "level": "L3",
+        "department": "内科",
+        "timeframe": "72 小时内门诊",
+        "reason": "未命中危险数值。",
+        "evidence": "《常见症状基层诊疗指南》（演示摘要）"
+      }
+    },
+    "general_redflag": {
+      "name": "急症警示",
+      "questions": [
+        {
+          "id": "state",
+          "title": "哪种急症警示？",
+          "type": "single",
+          "options": [
+            { "value": "consciousness", "label": "意识不清 / 叫不醒" },
+            { "value": "dysphagia", "label": "突发吞咽困难" }
+          ]
+        }
+      ],
+      "red_flags": [
+        {
+          "id": "consciousness",
+          "level": "L1",
+          "when": { "state": ["consciousness"] },
+          "reason": "意识不清或叫不醒，需立即急诊",
+          "department": "急诊科",
+          "timeframe": "立即拨打 120 或前往急诊",
+          "evidence": "《急诊预检分诊公开共识》（演示摘要）"
+        },
+        {
+          "id": "dysphagia",
+          "level": "L1",
+          "when": { "state": ["dysphagia"] },
+          "reason": "突发吞咽困难，需警惕卒中或神经系统急症",
+          "department": "急诊科 / 神经内科",
+          "timeframe": "立即拨打 120 或前往急诊",
+          "evidence": "《中国急性缺血性脑卒中诊治指南》（演示摘要）"
+        }
+      ],
+      "base": {
+        "level": "L3",
+        "department": "内科",
+        "timeframe": "72 小时内门诊",
+        "reason": "未命中急症警示。",
+        "evidence": "《常见症状基层诊疗指南》（演示摘要）"
+      }
+    }
+  }
+}
