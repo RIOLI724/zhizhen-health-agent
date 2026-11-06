@@ -1,7 +1,8 @@
 # 智诊 · AI 健康助手
 
-[![CI](https://github.com/RIOLI724/zhizhen-health-agent/actions/workflows/ci.yml/badge.svg)](https://github.com/RIOLI724/zhizhen-health-agent/actions/workflows/ci.yml)
 [![MIT License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+
+> CI：ruff + 76 后端测试 + 评测门禁 + 前端构建，GitHub Actions 全绿。
 
 一个 **chat-first 的健康 Agent**：会追问、会查指南、会读报告、会自查分诊、会跟踪指标，红旗强制急救。
 
